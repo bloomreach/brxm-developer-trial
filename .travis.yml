@@ -15,6 +15,9 @@
 services:
   - docker
 
+before_install:
+  - echo -e "machine code.onehippo.org\n  login $GIT_USER\n  password $GIT_PASSWORD" > ~/.netrc
+
 install:
   - rm backend/app/.gitkeep frontend/app/.gitkeep
   - git clone --single-branch --branch master https://code.onehippo.org/product-demo/developer-trial-backend.git backend/app
