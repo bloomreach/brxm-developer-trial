@@ -32,7 +32,7 @@ WORKDIR /app
 COPY --from=build /usr/share/maven/ref /usr/share/maven/ref
 
 VOLUME ["/app"]
-EXPOSE 8080
+EXPOSE 8000 8080
 
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh", "sh", "-c", "mvn clean verify && $@", "/dev/stdin"]
 
